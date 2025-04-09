@@ -1,0 +1,93 @@
+<div class="space-container">
+  <section class="hero">
+    <div class="stars"></div>
+    <h1>Request Mission Information</h1>
+    <p class="tagline">"Your journey to the stars begins here"</p>
+  </section>
+
+  <section class="form-section">
+    <form
+      [formGroup]="missionForm"
+      (ngSubmit)="onSubmit()"
+      class="mission-form"
+    >
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input
+          id="name"
+          type="text"
+          formControlName="name"
+          [class.invalid]="
+            missionForm.get('name')?.invalid && missionForm.get('name')?.touched
+          "
+        />
+        <div
+          class="error-message"
+          *ngIf="
+            missionForm.get('name')?.invalid && missionForm.get('name')?.touched
+          "
+        >
+          Name is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          id="email"
+          type="email"
+          formControlName="email"
+          [class.invalid]="
+            missionForm.get('email')?.invalid &&
+            missionForm.get('email')?.touched
+          "
+        />
+        <div
+          class="error-message"
+          *ngIf="
+            missionForm.get('email')?.invalid &&
+            missionForm.get('email')?.touched
+          "
+        >
+          Please enter a valid email address
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="mission">Preferred Mission/Planet</label>
+        <select id="mission" formControlName="mission">
+          <option value="">Select a mission</option>
+          <option *ngFor="let planet of planets" [value]="planet">
+            {{ planet }}
+          </option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea
+          id="message"
+          formControlName="message"
+          rows="5"
+          [class.invalid]="
+            missionForm.get('message')?.invalid &&
+            missionForm.get('message')?.touched
+          "
+        ></textarea>
+        <div
+          class="error-message"
+          *ngIf="
+            missionForm.get('message')?.invalid &&
+            missionForm.get('message')?.touched
+          "
+        >
+          Please enter a message (minimum 10 characters)
+        </div>
+      </div>
+
+      <button type="submit" [disabled]="missionForm.invalid" class="submit-btn">
+        Submit Request
+      </button>
+    </form>
+  </section>
+</div>

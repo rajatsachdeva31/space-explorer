@@ -1,0 +1,34 @@
+
+.space-container {
+  flex: 1; // Allow the container to take up the remaining space
+  display: flex;
+  flex-direction: column;
+  color: white;
+  overflow: hidden;
+}
+
+.hero {
+  flex: 1; // Ensure the hero section fills the available space
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+
+  h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, #fff, #7aa7ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  .tagline {
+    font-size: 1.5rem;
+    color: #7aa7ff;
+    max-width: 600px;
+    line-height: 1.6;
+  }
+}

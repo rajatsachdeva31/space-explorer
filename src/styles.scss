@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh; // Ensure the body takes up the full viewport height
+  background: linear-gradient(to bottom, #0B0B1F 0%, #1F1F4D 100%);
+}
+
+app-root {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+app-home {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden; // Prevent scrolling if content overflows
+}

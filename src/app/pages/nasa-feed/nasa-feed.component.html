@@ -1,0 +1,26 @@
+<div class="space-container">
+  <section class="hero">
+    <div class="stars"></div>
+    <h1>NASA Astronomy Pictures of the Day</h1>
+    <p class="tagline">"Exploring the wonders of space through NASA's lens"</p>
+  </section>
+
+  <section class="feed-grid">
+    <div class="feed-card" *ngFor="let item of apod">
+      <div class="image-container">
+        <ng-container *ngIf="item.media_type === 'image'">
+          <img [src]="item.url" [alt]="item.title" loading="lazy" />
+        </ng-container>
+        <ng-container *ngIf="item.media_type === 'video'">
+          <iframe [src]="item.url" frameborder="0" allowfullscreen></iframe>
+        </ng-container>
+      </div>
+      <div class="content">
+        <h2>{{ item.title }}</h2>
+        <p class="date">{{ item.date }}</p>
+        <p class="description">{{ item.explanation }}</p>
+        <p class="copyright" *ngIf="item.copyright">© {{ item.copyright }}</p>
+      </div>
+    </div>
+  </section>
+</div>
