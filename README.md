@@ -84,10 +84,10 @@ ng build
 
 ## 🔑 NASA API Key
 
-Get your free API key from https://api.nasa.gov/ and replace `DEMO_KEY` in `nasa-api.service.ts`:
+Get your free API key from https://api.nasa.gov/ and create .env file with `NASA_API_KEY`:
 
-```ts
-private apiKey = 'YOUR_API_KEY';
+```
+NASA_API_KEY='YOUR_API_KEY';
 ```
 
 ---
@@ -100,4 +100,4 @@ private apiKey = 'YOUR_API_KEY';
 
 ## 📬 Contact
 
-Made with 💫 by [Your Name] — for educational purposes.
+Made with 💫 by Rajat Sachdeva — for educational purposes.
