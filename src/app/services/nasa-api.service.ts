@@ -12,6 +12,6 @@ export class NasaApiService {
   constructor(private http: HttpClient) {}
 
   getApod(): Observable<any> {
-    return this.http.get(`${this.apodUrl}?api_key=${this.apiKey}&count=10`);
+    return this.http.get(`${this.apodUrl}?api_key=${this.apiKey}&count=16`);
   }
 }
